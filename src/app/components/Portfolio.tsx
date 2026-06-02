@@ -1,4 +1,4 @@
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from './ImageWithFallback';
 import appCreationImage from '../../imports/Screenshot_2026-05-28_at_5.19.10_pm.png';
 import designingComplianceImage from '../../imports/Screenshot_2026-05-28_at_5.29.48_pm.png';
 import taxonomyImage from '../../imports/images.jpg';
@@ -42,7 +42,7 @@ const projects: Project[] = [
     title: 'Making insurance claims easier',
     company: 'Sun Life Financial',
     description: 'Simplifying the insurance claims process through user-centered content design',
-    image: 'https://images.unsplash.com/photo-1573867639040-6dd25fa5f597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHx1aSUyMHV4JTIwZGVzaWduJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc4MDIyNjcxOHww&ixlib=rb-4.1.0&q=80&w=1080',
+    image: 'https://cdn.freebiesupply.com/logos/large/2x/sun-life-financial-1-logo-png-transparent.png',
     hasCaseStudy: true
   }
 ];
