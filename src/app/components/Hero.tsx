@@ -22,7 +22,7 @@ export function Hero() {
 
       <div className="relative z-10 text-center px-6 max-w-4xl">
         <p className="tracking-widest mb-3 opacity-60 text-sm">CONTENT DESIGNER</p>
-        <h1 className="mb-5 tracking-tight" style={{ fontSize: '6rem', fontWeight: 500, lineHeight: 1.1 }}>
+       <h1 className="mb-5 tracking-tight" style={{ fontSize: '6rem', fontWeight: 500, lineHeight: 1.1 }}>
           <span className="inline-block">LIZ</span>{' '}
           <span className="inline-block" style={{ color: 'var(--teal-dark)' }}>BEVAN</span>
         </h1>
