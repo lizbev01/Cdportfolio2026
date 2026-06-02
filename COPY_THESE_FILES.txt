@@ -1,0 +1,72 @@
+=== COMPLETE FILE LIST TO COPY FROM FIGMA MAKE ===
+
+ROOT FILES (copy to project root):
+- index.html
+- vercel.json
+- .gitignore
+- package.json
+- pnpm-lock.yaml
+- pnpm-workspace.yaml
+- postcss.config.mjs
+- vite.config.ts
+- default_shadcn_theme.css
+
+SRC FOLDER:
+- src/main.tsx
+
+SRC/APP FOLDER:
+- src/app/App.tsx
+
+SRC/APP/COMPONENTS (all 17 main components):
+- src/app/components/About.tsx
+- src/app/components/AppCreationCaseStudy.tsx
+- src/app/components/CaseStudyLayout.tsx
+- src/app/components/Contact.tsx
+- src/app/components/DesigningComplianceCaseStudy.tsx
+- src/app/components/Footer.tsx
+- src/app/components/Header.tsx
+- src/app/components/Hero.tsx
+- src/app/components/ImageModal.tsx
+- src/app/components/MakingClaimsEasierCaseStudy.tsx
+- src/app/components/Portfolio.tsx
+- src/app/components/Skills.tsx
+- src/app/components/Slideshow.tsx
+- src/app/components/TaxonomyCaseStudy.tsx
+- src/app/components/VideoComparison.tsx
+- src/app/components/figma/ImageWithFallback.tsx
+
+SRC/IMPORTS (19 images + videos - 41MB total):
+- src/imports/After_-_DFC_.mp4
+- src/imports/Before_-_DFC.mp4
+- src/imports/Screenshot_2026-05-28_at_5.19.10_pm.png
+- src/imports/Screenshot_2026-05-28_at_5.29.48_pm.png
+- src/imports/Screenshot_2026-05-31_at_7.45.07_pm.png
+- src/imports/Screenshot_2026-05-31_at_7.45.21_pm.png
+- src/imports/Screenshot_2026-05-31_at_7.45.50_pm.png
+- src/imports/Screenshot_2026-05-31_at_7.46.04_pm.png
+- src/imports/Screenshot_2026-05-31_at_7.46.27_pm.png
+- src/imports/Screenshot_2026-05-31_at_7.46.36_pm.png
+- src/imports/Screenshot_2026-05-31_at_7.46.51_pm.png
+- src/imports/Screenshot_2026-05-31_at_7.47.03_pm.png
+- src/imports/Screenshot_2026-05-31_at_7.47.21_pm.png
+- src/imports/Screenshot_2026-06-01_at_3.52.30_pm.png
+- src/imports/image-1.png
+- src/imports/image-2.png
+- src/imports/image-3.png
+- src/imports/image.png
+- src/imports/images.jpg
+
+SRC/STYLES (6 CSS files):
+- src/styles/fonts.css
+- src/styles/globals.css
+- src/styles/index.css
+- src/styles/slideshow.css
+- src/styles/tailwind.css
+- src/styles/theme.css
+
+SRC/APP/COMPONENTS/UI (all shadcn components - about 40 files):
+- src/app/components/ui/*.tsx (entire folder)
+
+PUBLIC FOLDER:
+- public/.gitkeep
+

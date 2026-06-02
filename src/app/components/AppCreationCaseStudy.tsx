@@ -1,6 +1,9 @@
 import { CaseStudyLayout } from './CaseStudyLayout';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Slideshow } from './Slideshow';
 import { VideoComparison } from './VideoComparison';
+import beforeVideo from '../../imports/Before_-_DFC.mp4';
+import afterVideo from '../../imports/After_-_DFC_.mp4';
 
 interface AppCreationCaseStudyProps {
   onBack: () => void;
@@ -197,8 +200,8 @@ export function AppCreationCaseStudy({ onBack }: AppCreationCaseStudyProps) {
         </div>
 
         <VideoComparison
-          beforeVideo="https://static.wixstatic.com/media/4c0acd_example1.mp4"
-          afterVideo="https://static.wixstatic.com/media/4c0acd_example2.mp4"
+          beforeVideo={beforeVideo}
+          afterVideo={afterVideo}
           beforeSpeed={1.25}
         />
       </section>

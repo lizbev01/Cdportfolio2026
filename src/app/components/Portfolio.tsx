@@ -1,4 +1,7 @@
-import { ImageWithFallback } from './ImageWithFallback';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import appCreationImage from '../../imports/Screenshot_2026-05-28_at_5.19.10_pm.png';
+import designingComplianceImage from '../../imports/Screenshot_2026-05-28_at_5.29.48_pm.png';
+import claimsImage from '../../imports/Screenshot_2026-05-31_at_7.45.07_pm.png';
 
 interface Project {
   id: string;
@@ -15,7 +18,7 @@ const projects: Project[] = [
     title: 'App creation for developers',
     company: 'Meta',
     description: 'Designing the content and information architecture for developer tools and app creation workflows',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
+    image: appCreationImage,
     hasCaseStudy: true
   },
   {
@@ -23,7 +26,7 @@ const projects: Project[] = [
     title: 'Taxonomy, templates & systems',
     company: 'Meta & Sun Life Financial',
     description: 'Building scalable content systems, style guides, and taxonomies for enterprise products',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1743385779347-1549dabf1320?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b3Jrc3BhY2UlMjBvcmdhbml6YXRpb24lMjBzeXN0ZW0lMjB0YXhvbm9teXxlbnwxfHx8fDE3ODA0MTM1OTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
     hasCaseStudy: true
   },
   {
@@ -31,7 +34,7 @@ const projects: Project[] = [
     title: 'Designing compliance',
     company: 'Meta',
     description: 'Overhauling App Review process with transparent workflows and clear content structure while maintaining legal guardrails',
-    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
+    image: designingComplianceImage,
     hasCaseStudy: true
   },
   {
@@ -39,7 +42,7 @@ const projects: Project[] = [
     title: 'Making insurance claims easier',
     company: 'Sun Life Financial',
     description: 'Simplifying the insurance claims process through user-centered content design',
-    image: 'https://cdn.freebiesupply.com/logos/large/2x/sun-life-financial-1-logo-png-transparent.png',
+    image: claimsImage,
     hasCaseStudy: true
   }
 ];
@@ -62,8 +65,19 @@ export function Portfolio({ onProjectClick }: PortfolioProps) {
                 project.hasCaseStudy ? 'cursor-pointer hover:border-teal-dark hover:shadow-lg' : ''
               }`}
               onClick={() => project.hasCaseStudy && onProjectClick?.(project.id)}
+              style={project.hasCaseStudy ? { borderColor: 'var(--border)' } : undefined}
+              onMouseEnter={(e) => {
+                if (project.hasCaseStudy) {
+                  e.currentTarget.style.borderColor = 'var(--teal-dark)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (project.hasCaseStudy) {
+                  e.currentTarget.style.borderColor = 'var(--border)';
+                }
+              }}
             >
-              <div className="aspect-video overflow-hidden bg-neutral-100">
+              <div className="aspect-video overflow-hidden">
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
@@ -71,11 +85,11 @@ export function Portfolio({ onProjectClick }: PortfolioProps) {
                 />
               </div>
               <div className="p-6">
-                <p className="tracking-wider mb-2 opacity-60 text-sm">{project.company}</p>
+                <p className="tracking-wider mb-2 opacity-60">{project.company}</p>
                 <h3 className="mb-3 tracking-tight">{project.title}</h3>
-                <p className="opacity-70 leading-relaxed text-sm">{project.description}</p>
+                <p className="opacity-70 leading-relaxed">{project.description}</p>
                 {project.hasCaseStudy && (
-                  <p className="mt-4 opacity-60 hover:opacity-100 transition-opacity text-sm" style={{ color: 'var(--teal-dark)' }}>
+                  <p className="mt-4 opacity-60 hover:opacity-100 transition-opacity" style={{ color: 'var(--teal-dark)' }}>
                     View case study →
                   </p>
                 )}

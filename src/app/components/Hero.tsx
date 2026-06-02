@@ -1,4 +1,4 @@
-import { ImageWithFallback } from './ImageWithFallback';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ChevronDown } from 'lucide-react';
 
 export function Hero() {
@@ -13,20 +13,20 @@ export function Hero() {
     <section id="hero" className="relative h-screen flex items-center justify-center">
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
-          src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwd29ya3NwYWNlJTIwZGVzaWduZXJ8ZW58MXx8fHwxNzgwMzQyODkyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+          src="https://images.unsplash.com/photo-1449247709967-d4461a6a6103?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxtaW5pbWFsaXN0JTIwZGVzaWduJTIwd29ya3NwYWNlJTIwZGVza3xlbnwxfHx8fDE3ODA0MTM2Mzd8MA&ixlib=rb-4.1.0&q=80&w=1920"
           alt="Minimalist workspace"
           className="w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-white" />
       </div>
 
-      <div className="relative z-10 text-center px-6 max-w-5xl">
-        <p className="tracking-widest mb-6 opacity-60 text-sm uppercase">CONTENT DESIGNER</p>
-        <h1 style={{ fontSize: '8rem', fontWeight: 500, lineHeight: 1, marginBottom: '2rem', letterSpacing: '-0.02em', fontFamily: 'Lora, serif' }}>
-          <span>LIZ</span>{' '}
-          <span style={{ color: '#14b8a6' }}>BEVAN</span>
+      <div className="relative z-10 text-center px-6 max-w-4xl">
+        <p className="tracking-widest mb-3 opacity-60">CONTENT DESIGNER</p>
+        <h1 className="mb-5 tracking-tight">
+          <span className="inline-block">LIZ</span>{' '}
+          <span className="inline-block" style={{ color: 'var(--teal-dark)' }}>BEVAN</span>
         </h1>
-        <p className="text-xl max-w-2xl mx-auto leading-relaxed opacity-80">
+        <p className="text-lg max-w-2xl mx-auto leading-relaxed opacity-80">
           Systems thinking meets user-centered design. Creating clear, consistent, and accessible content experiences.
         </p>
       </div>
