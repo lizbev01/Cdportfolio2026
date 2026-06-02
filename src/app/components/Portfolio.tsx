@@ -1,7 +1,4 @@
 import { ImageWithFallback } from './ImageWithFallback';
-import appCreationImage from '../../imports/Screenshot_2026-05-28_at_5.19.10_pm.png';
-import designingComplianceImage from '../../imports/Screenshot_2026-05-28_at_5.29.48_pm.png';
-import taxonomyImage from '../../imports/images.jpg';
 
 interface Project {
   id: string;
@@ -18,7 +15,7 @@ const projects: Project[] = [
     title: 'App creation for developers',
     company: 'Meta',
     description: 'Designing the content and information architecture for developer tools and app creation workflows',
-    image: appCreationImage,
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80',
     hasCaseStudy: true
   },
   {
@@ -26,7 +23,7 @@ const projects: Project[] = [
     title: 'Taxonomy, templates & systems',
     company: 'Meta & Sun Life Financial',
     description: 'Building scalable content systems, style guides, and taxonomies for enterprise products',
-    image: taxonomyImage,
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
     hasCaseStudy: true
   },
   {
@@ -34,7 +31,7 @@ const projects: Project[] = [
     title: 'Designing compliance',
     company: 'Meta',
     description: 'Overhauling App Review process with transparent workflows and clear content structure while maintaining legal guardrails',
-    image: designingComplianceImage,
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80',
     hasCaseStudy: true
   },
   {
@@ -65,19 +62,8 @@ export function Portfolio({ onProjectClick }: PortfolioProps) {
                 project.hasCaseStudy ? 'cursor-pointer hover:border-teal-dark hover:shadow-lg' : ''
               }`}
               onClick={() => project.hasCaseStudy && onProjectClick?.(project.id)}
-              style={project.hasCaseStudy ? { borderColor: 'var(--border)' } : undefined}
-              onMouseEnter={(e) => {
-                if (project.hasCaseStudy) {
-                  e.currentTarget.style.borderColor = 'var(--teal-dark)';
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (project.hasCaseStudy) {
-                  e.currentTarget.style.borderColor = 'var(--border)';
-                }
-              }}
             >
-              <div className="aspect-video overflow-hidden">
+              <div className="aspect-video overflow-hidden bg-neutral-100">
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
@@ -85,11 +71,11 @@ export function Portfolio({ onProjectClick }: PortfolioProps) {
                 />
               </div>
               <div className="p-6">
-                <p className="tracking-wider mb-2 opacity-60">{project.company}</p>
+                <p className="tracking-wider mb-2 opacity-60 text-sm">{project.company}</p>
                 <h3 className="mb-3 tracking-tight">{project.title}</h3>
-                <p className="opacity-70 leading-relaxed">{project.description}</p>
+                <p className="opacity-70 leading-relaxed text-sm">{project.description}</p>
                 {project.hasCaseStudy && (
-                  <p className="mt-4 opacity-60 hover:opacity-100 transition-opacity" style={{ color: 'var(--teal-dark)' }}>
+                  <p className="mt-4 opacity-60 hover:opacity-100 transition-opacity text-sm" style={{ color: 'var(--teal-dark)' }}>
                     View case study →
                   </p>
                 )}
