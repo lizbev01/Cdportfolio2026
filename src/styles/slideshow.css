@@ -1,0 +1,24 @@
+.slideshow-container .slick-dots {
+  position: relative;
+  bottom: 0;
+  padding: 1rem 0;
+}
+
+.slideshow-container .slick-dots li {
+  margin: 0;
+  width: auto;
+  height: auto;
+}
+
+.slideshow-container .slick-dots li button:before {
+  display: none;
+}
+
+.slideshow-container .slick-dots li.slick-active button {
+  background-color: var(--teal-dark);
+}
+
+.slideshow-container .slick-prev,
+.slideshow-container .slick-next {
+  display: none !important;
+}

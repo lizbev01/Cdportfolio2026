@@ -1,0 +1,103 @@
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import appCreationImage from '../../imports/Screenshot_2026-05-28_at_5.19.10_pm.png';
+import designingComplianceImage from '../../imports/Screenshot_2026-05-28_at_5.29.48_pm.png';
+import taxonomyImage from '../../imports/images.jpg';
+
+interface Project {
+  id: string;
+  title: string;
+  company: string;
+  description: string;
+  image: string;
+  hasCaseStudy?: boolean;
+}
+
+const projects: Project[] = [
+  {
+    id: 'app-creation',
+    title: 'App creation for developers',
+    company: 'Meta',
+    description: 'Designing the content and information architecture for developer tools and app creation workflows',
+    image: appCreationImage,
+    hasCaseStudy: true
+  },
+  {
+    id: 'taxonomy',
+    title: 'Taxonomy, templates & systems',
+    company: 'Meta & Sun Life Financial',
+    description: 'Building scalable content systems, style guides, and taxonomies for enterprise products',
+    image: taxonomyImage,
+    hasCaseStudy: true
+  },
+  {
+    id: 'policy',
+    title: 'Designing compliance',
+    company: 'Meta',
+    description: 'Overhauling App Review process with transparent workflows and clear content structure while maintaining legal guardrails',
+    image: designingComplianceImage,
+    hasCaseStudy: true
+  },
+  {
+    id: 'claims',
+    title: 'Making insurance claims easier',
+    company: 'Sun Life Financial',
+    description: 'Simplifying the insurance claims process through user-centered content design',
+    image: 'https://images.unsplash.com/photo-1573867639040-6dd25fa5f597?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHx1aSUyMHV4JTIwZGVzaWduJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc4MDIyNjcxOHww&ixlib=rb-4.1.0&q=80&w=1080',
+    hasCaseStudy: true
+  }
+];
+
+interface PortfolioProps {
+  onProjectClick?: (projectId: string) => void;
+}
+
+export function Portfolio({ onProjectClick }: PortfolioProps) {
+  return (
+    <section id="portfolio" className="py-16 px-6 bg-neutral-50">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-center mb-12 tracking-tight">Some of my work</h2>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className={`bg-white border border-neutral-200 overflow-hidden transition-all group ${
+                project.hasCaseStudy ? 'cursor-pointer hover:border-teal-dark hover:shadow-lg' : ''
+              }`}
+              onClick={() => project.hasCaseStudy && onProjectClick?.(project.id)}
+              style={project.hasCaseStudy ? { borderColor: 'var(--border)' } : undefined}
+              onMouseEnter={(e) => {
+                if (project.hasCaseStudy) {
+                  e.currentTarget.style.borderColor = 'var(--teal-dark)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (project.hasCaseStudy) {
+                  e.currentTarget.style.borderColor = 'var(--border)';
+                }
+              }}
+            >
+              <div className="aspect-video overflow-hidden">
+                <ImageWithFallback
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <p className="tracking-wider mb-2 opacity-60">{project.company}</p>
+                <h3 className="mb-3 tracking-tight">{project.title}</h3>
+                <p className="opacity-70 leading-relaxed">{project.description}</p>
+                {project.hasCaseStudy && (
+                  <p className="mt-4 opacity-60 hover:opacity-100 transition-opacity" style={{ color: 'var(--teal-dark)' }}>
+                    View case study →
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

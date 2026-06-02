@@ -1,0 +1,47 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.prose-custom h2 {
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+.prose-custom h3 {
+  margin-bottom: 0.75rem;
+  margin-top: 1rem;
+}
+
+.prose-custom h4 {
+  margin-bottom: 0.75rem;
+  margin-top: 1rem;
+}
+
+.prose-custom p {
+  margin-bottom: 1rem;
+}
+
+.prose-custom ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.prose-custom ul li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.prose-custom ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0.5rem;
+  opacity: 0.6;
+}
+
+.prose-custom section {
+  scroll-margin-top: 5rem;
+}
