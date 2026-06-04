@@ -6,8 +6,7 @@
   "scripts": {
     "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -t true",
-    "dev": "vite"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
