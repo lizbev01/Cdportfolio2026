@@ -1,28 +1,26 @@
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
 
+type HomeSection = 'hero' | 'about' | 'skills' | 'portfolio' | 'contact';
+
 interface HeaderProps {
-  onNavigate?: () => void;
+  onNavigate?: (section: HomeSection) => void;
 }
 
 export function Header({ onNavigate }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id: HomeSection) => {
     if (onNavigate) {
-      onNavigate();
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
+      onNavigate(id);
     } else {
       const element = document.getElementById(id);
+
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
+
     setMenuOpen(false);
   };
 

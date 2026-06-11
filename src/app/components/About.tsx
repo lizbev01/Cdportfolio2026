@@ -1,8 +1,18 @@
+import aboutLizOutdoors from '../../imports/about-liz-outdoors.png';
+
 export function About() {
   return (
     <section id="about" className="py-16 px-6 bg-neutral-50">
-      <div className="max-w-4xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12">
+      <div className="max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-[0.9fr_1fr_1fr] gap-10 md:gap-12 items-start">
+          <div className="md:pt-1">
+            <img
+              src={aboutLizOutdoors}
+              alt="Liz outdoors in a scenic landscape"
+              className="w-full aspect-[4/5] object-cover rounded-2xl shadow-sm"
+            />
+          </div>
+
           <div>
             <h2 className="mb-4 tracking-tight">Who I am</h2>
             <p className="leading-relaxed opacity-80">

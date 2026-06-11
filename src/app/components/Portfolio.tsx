@@ -1,7 +1,8 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import appCreationImage from '../../imports/Screenshot_2026-05-28_at_5.19.10_pm.png';
-import designingComplianceImage from '../../imports/Screenshot_2026-05-28_at_5.29.48_pm.png';
-import claimsImage from '../../imports/Screenshot_2026-05-31_at_7.45.07_pm.png';
+import aiDeveloperCenterImage from '../../imports/ai-dev-center-link.png';
+import claimsImage from '../../imports/insurance-claims-app.jpg';
+import iaTemplatesSystemsImage from '../../imports/ia-templates-systems.jpeg';
 
 interface Project {
   id: string;
@@ -10,31 +11,33 @@ interface Project {
   description: string;
   image: string;
   hasCaseStudy?: boolean;
+  imageContainerClassName?: string;
+  imageClassName?: string;
 }
 
 const projects: Project[] = [
   {
     id: 'app-creation',
-    title: 'App creation for developers',
+    title: 'App creation and compliance for developers',
     company: 'Meta',
-    description: 'Designing the content and information architecture for developer tools and app creation workflows',
+    description: 'Full end-to-end content design for the developer experience on developers.facebook.com, from app creation and technical documentation through App Review and compliance',
     image: appCreationImage,
     hasCaseStudy: true
   },
   {
-    id: 'taxonomy',
-    title: 'Taxonomy, templates & systems',
-    company: 'Meta & Sun Life Financial',
-    description: 'Building scalable content systems, style guides, and taxonomies for enterprise products',
-    image: 'https://images.unsplash.com/photo-1743385779347-1549dabf1320?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b3Jrc3BhY2UlMjBvcmdhbml6YXRpb24lMjBzeXN0ZW0lMjB0YXhvbm9teXxlbnwxfHx8fDE3ODA0MTM1OTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    id: 'ai-developer-center',
+    title: 'Building an AI developer center',
+    company: 'Meta',
+    description: 'Aligning terminology, navigation, information architecture, and technical documentation for a scalable AI developer experience',
+    image: aiDeveloperCenterImage,
     hasCaseStudy: true
   },
   {
-    id: 'policy',
-    title: 'Designing compliance',
-    company: 'Meta',
-    description: 'Overhauling App Review process with transparent workflows and clear content structure while maintaining legal guardrails',
-    image: designingComplianceImage,
+    id: 'taxonomy',
+    title: 'IA, templates and systems',
+    company: 'Meta & Sun Life Financial',
+    description: 'Building scalable content systems, style guides, and taxonomies for enterprise products',
+    image: iaTemplatesSystemsImage,
     hasCaseStudy: true
   },
   {
@@ -43,7 +46,9 @@ const projects: Project[] = [
     company: 'Sun Life Financial',
     description: 'Simplifying the insurance claims process through user-centered content design',
     image: claimsImage,
-    hasCaseStudy: true
+    hasCaseStudy: true,
+    imageContainerClassName: 'bg-white',
+    imageClassName: 'object-contain p-3 group-hover:scale-105'
   }
 ];
 
@@ -77,11 +82,13 @@ export function Portfolio({ onProjectClick }: PortfolioProps) {
                 }
               }}
             >
-              <div className="aspect-video overflow-hidden">
+              <div className={`aspect-video overflow-hidden ${project.imageContainerClassName ?? ''}`}>
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className={`w-full h-full transition-transform duration-300 ${
+                    project.imageClassName ?? 'object-cover group-hover:scale-105'
+                  }`}
                 />
               </div>
               <div className="p-6">
